@@ -4,9 +4,9 @@ declare global {
   var mongoose: any; // This must be a `var` and not a `let / const`
 }
 
-const MONGODB_URI = process.env.DATABASE_URL!;
+const MONGODB_URI = process.env.MONGODB_URI!;
 
-console.log(process.env.DATABASE_URL as string)
+console.log(process.env.MONGODB_URI as string)
 
 if (!MONGODB_URI) {
   throw new Error(
