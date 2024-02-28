@@ -13,7 +13,7 @@ export default function Home() {
               Living in a world where everything comes at you fast can be hard
             </h2>
             <p className="text-2xl font-bold mb-3">
-              Life used to be simple and yet we were moving forward. Member 🍒
+              Life used to be simple and yet we were moving forward. Member berry 🍒
             </p>
 
             <p className="text-sm lowercase text-gray-300 font-semibold text-shadow-lg w-[80%] mx-auto">
