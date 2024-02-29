@@ -1,13 +1,14 @@
-import { getSession } from "@/app/lib/action";
 import Image from "next/image";
+
+import { getSession } from "@/app/lib/action";
 import BlogPosts from "@/app/components/blog/blogposts";
 import Link from "next/link";
 import { FaEnvelope, FaUserEdit, FaUserPlus } from "react-icons/fa";
 
 const Page = async ({ params }: { params: { userId: string } }) => {
-  console.log();
 
   const session = await getSession();
+
 
   const recentBlogs = [
     {
@@ -46,9 +47,11 @@ const Page = async ({ params }: { params: { userId: string } }) => {
 
   return (
     <section className="w-full min-h-screen bg-[#333] text-white">
+
     <header className="flex items-center justify-center w-full p-4 gap-10">
+
       <Image
-        src={session.image as string}
+        src={"/bbS.png"}
         alt="Profile Image"
         width={300}
         height={300}
@@ -56,14 +59,14 @@ const Page = async ({ params }: { params: { userId: string } }) => {
 
       <div>
         <div className="mb-2">
-          <h2 className="text-2xl font-bold">{session.username}</h2>
-          <p>Preference: {session.preference}</p>
+          <h2 className="text-2xl font-bold">{session?.username}</h2>
+          <p>Preference: {session?.preference}</p>
           <p>Blogs: 2</p>
         </div>
 
-        {session.userId === params.userId ? (
+        {session?.userId === params.userId ? (
           <div className="w-[300px] bg-[#222] flex items-center justify-between p-2 rounded-md">
-            <Link href={`/profile/${session.userId}/edit`} className="font-bold">
+            <Link href={`/profile/${session?.userId}/edit`} className="font-bold">
               <p className="flex items-center gap-2">
                 <FaUserEdit /> Edit Profile
               </p>
@@ -80,7 +83,7 @@ const Page = async ({ params }: { params: { userId: string } }) => {
           </div>
         )}
       </div>
-    </header>
+    </header> 
 
     <section className="max-w-6xl mx-auto py-8 flex justify-between gap-8">
       <div className="w-3/4">
@@ -112,6 +115,7 @@ const Page = async ({ params }: { params: { userId: string } }) => {
         </div>
       </div>
     </section>
+
   </section>
   );
 };
