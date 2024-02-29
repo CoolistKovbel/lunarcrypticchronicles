@@ -209,7 +209,9 @@ export async function Login(prevState: string | undefined, formData: FormData) {
     await session.save();
 
     return "success";
+
   } catch (error) {
+    
     console.log(error);
     return "error im sorry but this entire form";
   }

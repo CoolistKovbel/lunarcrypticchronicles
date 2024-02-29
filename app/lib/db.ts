@@ -6,7 +6,7 @@ declare global {
 
 const MONGODB_URI = process.env.MONGODB_URI!;
 
-console.log(process.env.MONGODB_URI as string)
+// console.log(process.env.MONGODB_URI as string)
 
 if (!MONGODB_URI) {
   throw new Error(

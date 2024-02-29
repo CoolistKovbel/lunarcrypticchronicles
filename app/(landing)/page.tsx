@@ -71,6 +71,10 @@ export default function Home() {
         </div>
       </WavyBackground>
       <EmailList />
+
+      <div>
+        <h2>Are you ready freddy.</h2>
+      </div>
     </main>
   );
 }
