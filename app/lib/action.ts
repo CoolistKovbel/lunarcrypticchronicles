@@ -145,6 +145,8 @@ export async function ContactEmail(
   const data = Object.fromEntries(formData.entries());
 
   try {
+    await dbConnect();
+    
     const validatedFields = SendContactEmail.safeParse(data);
 
     const existingUser = await User.findOne({ _id: id });
